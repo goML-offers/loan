@@ -3,9 +3,14 @@ import openai
 import pandas as pd
 import csv
 import pandas as pd
+import os
 from io import StringIO
-# Set your OpenAI API key
-api_key = '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'
+from dotenv import load_dotenv
+load_dotenv()
+
+
+# Get the OpenAI API key from the environment
+api_key = os.getenv('OPENAI_API_KEY')
 
 # Initialize the OpenAI API client
 openai.api_key = api_key
