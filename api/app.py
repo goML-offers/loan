@@ -19,9 +19,9 @@ app.add_middleware(
 )
 
 app.include_router(router.router,tags=["synthesis data generator"])
-def run_server():
+# def run_server():
 
-    uvicorn.run("app:app", host="127.0.0.1", port=8000, reload=True)
-if __name__ == "__main__":
-     print("test")
-     run_server()
+#     uvicorn.run("app:app", host="127.0.0.1", port=8000, reload=True)
+# if __name__ == "__main__":
+#      print("test")
+#      run_server()

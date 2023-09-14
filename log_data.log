@@ -1456,3 +1456,5 @@ ValueError: could not convert string to float: 'Male'
 2023-09-14 16:20:03,178 - ERROR - Incorrect API key provided: sk-A3ieb***************************************deYp. You can find your API key at https://platform.openai.com/account/api-keys.
 2023-09-14 16:20:04,880 - ERROR - Incorrect API key provided: sk-A3ieb***************************************deYp. You can find your API key at https://platform.openai.com/account/api-keys.
 2023-09-14 16:20:09,014 - ERROR - Incorrect API key provided: sk-A3ieb***************************************deYp. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-09-14 17:33:48,972 - ERROR - You exceeded your current quota, please check your plan and billing details.
+2023-09-14 17:34:45,428 - ERROR - You exceeded your current quota, please check your plan and billing details.

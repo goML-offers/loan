@@ -2,6 +2,6 @@ version: '3'
 services: 
     core_api:
         build: .
-        container_name: "core-api-container"
+        container_name: "ll-api-container"
         ports: 
-            - "8000:15400"
+            - "8000:8000"

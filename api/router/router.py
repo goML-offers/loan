@@ -52,7 +52,7 @@ def data_generator(file: UploadFile):
 @router.post('/goml/LLM marketplace/finance_data_generator/accuracy_generator', status_code=201)
 async def accuracy_generator(original_file: UploadFile, synthesized_file: UploadFile):
     try:
-        upload_dir = "api/uploads/"
+        upload_dir = "/api/uploads/"
         original_file_path = os.path.join(upload_dir, original_file.filename)
         synthesized_file_path = os.path.join(upload_dir, synthesized_file.filename)
 
@@ -76,7 +76,7 @@ async def accuracy_generator(original_file: UploadFile, synthesized_file: Upload
         merged_df = pd.concat([df_original, df_synthesized], axis=0, ignore_index=True)
 
         # Define the file path where you want to save the merged CSV
-        merged_file_path = 'api/uploads/synthesized_file.csv'
+        merged_file_path = '/api/uploads/synthesized_file.csv'
 
         # Write the merged DataFrame to a new CSV file
         merged_df.to_csv(merged_file_path, index=False)

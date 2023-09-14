@@ -105,7 +105,7 @@ def train_loan_approval_model(path):
 
 def predict_loan_approval(input_path):
     input_data = pd.read_csv(input_path)
-    with open('process_pred_new.pkl', 'rb') as model_file:
+    with open('/api/process_pred_new.pkl', 'rb') as model_file:
         rf_classifier = pickle.load(model_file)
     
     predictions  = rf_classifier.predict(input_data)
