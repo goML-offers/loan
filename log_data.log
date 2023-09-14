@@ -1344,3 +1344,115 @@ Traceback (most recent call last):
           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ValueError: could not convert string to float: ' Useful'
 
+2023-09-14 14:11:48,667 - ERROR - This model's maximum context length is 4097 tokens, however you requested 4126 tokens (126 in your prompt; 4000 for the completion). Please reduce your prompt; or completion length.
+2023-09-14 14:12:12,260 - ERROR - This model's maximum context length is 4097 tokens, however you requested 4126 tokens (126 in your prompt; 4000 for the completion). Please reduce your prompt; or completion length.
+2023-09-14 14:48:34,744 - ERROR - name 'precision_score' is not defined
+2023-09-14 14:48:55,590 - ERROR - name 'precision_score' is not defined
+2023-09-14 15:01:22,224 - ERROR - 
+All the 135 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+27 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\Akash\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\model_selection\_validation.py", line 732, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\Akash\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\base.py", line 1151, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Akash\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\ensemble\_forest.py", line 348, in fit
+    X, y = self._validate_data(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Akash\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\base.py", line 621, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Akash\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\utils\validation.py", line 1147, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "C:\Users\Akash\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\utils\validation.py", line 917, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Akash\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\utils\_array_api.py", line 380, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Akash\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\generic.py", line 1998, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'Female'
+
+--------------------------------------------------------------------------------
+108 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\Akash\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\model_selection\_validation.py", line 732, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\Akash\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\base.py", line 1151, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Akash\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\ensemble\_forest.py", line 348, in fit
+    X, y = self._validate_data(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Akash\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\base.py", line 621, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Akash\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\utils\validation.py", line 1147, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "C:\Users\Akash\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\utils\validation.py", line 917, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Akash\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\utils\_array_api.py", line 380, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Akash\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\generic.py", line 1998, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'Male'
+
+2023-09-14 15:06:06,366 - ERROR - name 'precision_score' is not defined
+2023-09-14 15:16:55,679 - ERROR - pos_label=Y is not a valid label. It should be one of [0, 1]
+2023-09-14 15:24:36,401 - ERROR - [Errno 2] No such file or directory: 'api/uploads/Loan_data.csv'
+2023-09-14 15:27:18,952 - ERROR - [WinError 32] The process cannot access the file because it is being used by another process: 'api/uploads/generated_data.csv'
+2023-09-14 15:27:18,958 - ERROR - [Errno 2] No such file or directory: 'api/uploads/Loan_data.csv'
+2023-09-14 15:27:18,965 - ERROR - [Errno 2] No such file or directory: 'api/uploads/Loan_data.csv'
+2023-09-14 15:27:18,971 - ERROR - [Errno 2] No such file or directory: 'api/uploads/Loan_data.csv'
+2023-09-14 15:27:18,977 - ERROR - [Errno 2] No such file or directory: 'api/uploads/Loan_data.csv'
+2023-09-14 15:27:18,983 - ERROR - [Errno 2] No such file or directory: 'api/uploads/Loan_data.csv'
+2023-09-14 15:27:18,987 - ERROR - [Errno 2] No such file or directory: 'api/uploads/Loan_data.csv'
+2023-09-14 15:27:18,990 - ERROR - [Errno 2] No such file or directory: 'api/uploads/Loan_data.csv'
+2023-09-14 15:27:18,994 - ERROR - [Errno 2] No such file or directory: 'api/uploads/Loan_data.csv'
+2023-09-14 15:27:19,000 - ERROR - [Errno 2] No such file or directory: 'api/uploads/Loan_data.csv'
+2023-09-14 15:36:40,563 - ERROR - unsupported operand type(s) for +: 'int' and 'str'
+2023-09-14 15:37:00,392 - ERROR - unsupported operand type(s) for +: 'int' and 'str'
+2023-09-14 15:42:13,892 - ERROR - [Errno 2] No such file or directory: 'api/uploads/Loan_data_Predict.csv'
+2023-09-14 15:46:27,444 - ERROR - Error tokenizing data. C error: Expected 13 fields in line 43, saw 18
+
+2023-09-14 15:46:27,758 - ERROR - Error tokenizing data. C error: Expected 13 fields in line 43, saw 18
+
+2023-09-14 15:48:21,735 - ERROR - Error tokenizing data. C error: Expected 13 fields in line 43, saw 18
+
+2023-09-14 15:48:21,738 - ERROR - Error tokenizing data. C error: Expected 13 fields in line 43, saw 18
+
+2023-09-14 15:50:43,738 - ERROR - Error tokenizing data. C error: Expected 13 fields in line 43, saw 18
+
+2023-09-14 15:50:43,742 - ERROR - Error tokenizing data. C error: Expected 13 fields in line 43, saw 18
+
+2023-09-14 15:51:38,767 - ERROR - Error tokenizing data. C error: Expected 13 fields in line 43, saw 18
+
+2023-09-14 15:51:52,641 - ERROR - Error tokenizing data. C error: Expected 13 fields in line 43, saw 18
+
+2023-09-14 15:51:53,463 - ERROR - Error tokenizing data. C error: Expected 13 fields in line 43, saw 18
+
+2023-09-14 15:52:03,202 - ERROR - Error tokenizing data. C error: Expected 13 fields in line 43, saw 18
+
+2023-09-14 16:11:10,047 - ERROR - Incorrect API key provided: sk-A3ieb***************************************deYp. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-09-14 16:12:08,117 - ERROR - Incorrect API key provided: sk-A3ieb***************************************deYp. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-09-14 16:14:13,154 - ERROR - Incorrect API key provided: sk-A3ieb***************************************deYp. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-09-14 16:16:13,823 - ERROR - Incorrect API key provided: sk-A3ieb***************************************deYp. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-09-14 16:17:43,959 - ERROR - Incorrect API key provided: sk-A3ieb***************************************deYp. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-09-14 16:19:22,930 - ERROR - Incorrect API key provided: sk-A3ieb***************************************deYp. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-09-14 16:19:46,568 - ERROR - Incorrect API key provided: sk-A3ieb***************************************deYp. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-09-14 16:20:03,178 - ERROR - Incorrect API key provided: sk-A3ieb***************************************deYp. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-09-14 16:20:04,880 - ERROR - Incorrect API key provided: sk-A3ieb***************************************deYp. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-09-14 16:20:09,014 - ERROR - Incorrect API key provided: sk-A3ieb***************************************deYp. You can find your API key at https://platform.openai.com/account/api-keys.

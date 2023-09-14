@@ -41,12 +41,11 @@ def read_csv_header(file_path):
     return generated_data
 
 def generate_model_data(csv_data):
-    prompt = f""" Generate 100 rows of data with columns : {', '.join(csv_data[0])} strictly as csv without any missing values.Don't generate code., also refer :{', '.join(csv_data[2])} for dataset description, .
-                    
-    
-    """
+    prompt = f""" Generate 100 rows of data for the csv header where columns is : {', '.join(csv_data[0])} strictly as csv output without any missing values .Don't generate code.
+                    in Loan_status column only "N" value should come.\n
+                    """
     response = openai.Completion.create(
-        engine="text-davinci-002",
+        engine="text-davinci-003",
         prompt=prompt,
         max_tokens=3000,  # Adjust as needed
         n=1,  # Number of responses to generate

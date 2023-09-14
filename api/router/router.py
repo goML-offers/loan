@@ -23,7 +23,7 @@ logger = setup_logger(f"log_data.log")
 
 router = APIRouter()
 @router.post('/goml/LLM marketplace/finance_data_generator/upload_file', status_code=201)
-def matrix_generator_from_RFP(file: UploadFile):
+def data_generator(file: UploadFile):
     try:
         UPLOAD_DIR = "/api/uploads"
 
@@ -80,8 +80,8 @@ async def accuracy_generator(original_file: UploadFile, synthesized_file: Upload
 
         # Write the merged DataFrame to a new CSV file
         merged_df.to_csv(merged_file_path, index=False)
-        without_synthesized_accuracy = train_loan_approval_model(original_file_path)['accuracy']*100    
-        synthesized_accuracy = train_loan_approval_model(merged_file_path)['accuracy']*100
+        without_synthesized_accuracy = train_loan_approval_model(original_file_path)
+        synthesized_accuracy = train_loan_approval_model(merged_file_path)
         os.remove(original_file_path)
         os.remove(merged_file_path)
         # push_to_s3(merged_file_path)

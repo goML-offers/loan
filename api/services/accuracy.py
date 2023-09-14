@@ -3,7 +3,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score
 import pickle
 import numpy as np
 
@@ -76,6 +76,8 @@ def train_loan_approval_model(path):
 
     # Calculate accuracy
     accuracy = accuracy_score(y_test, y_pred)
+    # multiply by 10 with two decimal points
+    accuracy = np.round(accuracy*100, 2)
     
     # print(f"Accuracy: {accuracy}")
 
@@ -89,10 +91,15 @@ def train_loan_approval_model(path):
     # Save the model to a pickle file
     # with open('process_pred.pkl', 'wb') as model_file:
     #     pickle.dump(rf_classifier, model_file)
-
- 
-
-    return {"accuracy": accuracy}
+    
+    precision = precision_score(y_test, y_pred, average='binary', pos_label=1)
+    precision = np.round(precision*100, 2)
+    recall = recall_score(y_test, y_pred, average='binary', pos_label=1)
+    recall = np.round(recall*100, 2)
+    
+    
+  
+    return {"accuracy": accuracy,"precision": precision,"recall": recall}
 
  
 
