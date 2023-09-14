@@ -2,7 +2,6 @@ from fastapi import FastAPI
 import uvicorn
 import os
 import sys
-sys.path.insert(0, 'LLM Procurement\\api\\')
 from router import router
 from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()

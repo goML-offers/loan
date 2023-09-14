@@ -1,19 +1,16 @@
 import sys
-import time
 import aiofiles
 import pandas as pd
-from fastapi import FastAPI, File, Form, UploadFile
+from fastapi import FastAPI, File,  UploadFile
 from typing import List
-from fastapi import APIRouter, Depends, Request
-from sqlalchemy.orm import Session
+from fastapi import APIRouter
 from fastapi import APIRouter, HTTPException, Response
-from services.s3_data import push_to_s3
+
 from services.data_generation import read_csv_header
 from services.accuracy import train_loan_approval_model, predict_loan_approval
-# from services.s3_data import push_to_s3,get_from_s3
 import os
 from fastapi.responses import JSONResponse
-import shutil
+
 import json
 from dotenv import load_dotenv
 load_dotenv()
@@ -96,20 +93,29 @@ async def accuracy_generator(original_file: UploadFile, synthesized_file: Upload
     except Exception as e:
             logger.error(str(e))
             raise HTTPException(status_code=400, detail=str(e))
+            return 
 
 
 @router.post('/goml/LLM marketplace/finance_data_generator/validating_test', status_code=201)
-async def validating_test_file(test_file: UploadFile):
+async def validating_test(file: UploadFile = File(...)):
     try:
-        upload_dir = "api/uploads/"
-        original_file_path = os.path.join(upload_dir, test_file.filename)
+        UPLOAD_DIR = "/api/uploads/"
 
-        # Use 'await' when reading the file contents
-        async with aiofiles.open(test_file, "wb") as f:
-            await f.write(await test_file.read())
-
-        predicted_data=predict_loan_approval(test_file)
-        print(predicted_data, type(predicted_data))
+        if not os.path.exists(UPLOAD_DIR):
+            os.makedirs(UPLOAD_DIR)
+        
+        # Generate a unique file name to avoid overwriting existing files
+        file_path = os.path.join(UPLOAD_DIR, file.filename)
+        
+        with open(file_path, "wb") as f:
+            f.write(file.file.read())
+        print(file_path)
+        predicted_data = predict_loan_approval(file_path)
+        
+        # Perform any additional processing or response logic here
+        
+        return {"predicted_data": predicted_data}
     except Exception as e:
-            logger.error(str(e))
-            raise HTTPException(status_code=400, detail=str(e))
+        logger.error(str(e))
+        # raise HTTPException(status_code=500, detail="Internal server error")
+        return e

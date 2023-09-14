@@ -1,0 +1,28 @@
+2023-09-13 22:46:48,462 - ERROR - No API key provided. You can set your API key in code using 'openai.api_key = <API-KEY>', or you can set the environment variable OPENAI_API_KEY=<API-KEY>). If your API key is stored in a file, you can point the openai module at it with 'openai.api_key_path = <PATH>'. You can generate API keys in the OpenAI web interface. See https://platform.openai.com/account/api-keys for details.
+2023-09-13 22:47:25,193 - ERROR - No API key provided. You can set your API key in code using 'openai.api_key = <API-KEY>', or you can set the environment variable OPENAI_API_KEY=<API-KEY>). If your API key is stored in a file, you can point the openai module at it with 'openai.api_key_path = <PATH>'. You can generate API keys in the OpenAI web interface. See https://platform.openai.com/account/api-keys for details.
+2023-09-13 22:50:40,342 - ERROR - Incorrect API key provided: sk-A3ieb***************************************deYp. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-09-13 22:51:04,923 - ERROR - Incorrect API key provided: sk-A3ieb***************************************deYp. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-09-13 22:51:11,988 - ERROR - Incorrect API key provided: sk-A3ieb***************************************deYp. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-09-13 22:52:27,786 - ERROR - Incorrect API key provided: sk-A3ieb***************************************deYp. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-09-13 23:00:38,273 - ERROR - expected str, bytes or os.PathLike object, not UploadFile
+2023-09-13 23:00:53,252 - ERROR - expected str, bytes or os.PathLike object, not UploadFile
+2023-09-13 23:01:57,360 - ERROR - expected str, bytes or os.PathLike object, not UploadFile
+2023-09-13 23:03:54,002 - ERROR - expected str, bytes or os.PathLike object, not UploadFile
+2023-09-13 23:10:18,425 - ERROR - expected str, bytes or os.PathLike object, not UploadFile
+2023-09-13 23:10:20,280 - ERROR - expected str, bytes or os.PathLike object, not UploadFile
+2023-09-13 23:10:21,164 - ERROR - expected str, bytes or os.PathLike object, not UploadFile
+2023-09-13 23:10:21,900 - ERROR - expected str, bytes or os.PathLike object, not UploadFile
+2023-09-13 23:10:22,218 - ERROR - expected str, bytes or os.PathLike object, not UploadFile
+2023-09-13 23:10:22,563 - ERROR - expected str, bytes or os.PathLike object, not UploadFile
+2023-09-13 23:10:22,862 - ERROR - expected str, bytes or os.PathLike object, not UploadFile
+2023-09-13 23:11:55,245 - ERROR - expected str, bytes or os.PathLike object, not UploadFile
+2023-09-13 23:19:04,768 - ERROR - Must pass 2-d input. shape=(1, 49, 12)
+2023-09-13 23:19:32,491 - ERROR - Must pass 2-d input. shape=(1, 49, 12)
+2023-09-13 23:20:04,677 - ERROR - Must pass 2-d input. shape=(1, 49, 12)
+2023-09-13 23:20:16,855 - ERROR - Must pass 2-d input. shape=(1, 49, 12)
+2023-09-13 23:20:53,108 - ERROR - Must pass 2-d input. shape=(1, 49, 12)
+2023-09-13 23:21:16,185 - ERROR - Must pass 2-d input. shape=(1, 49, 12)
+2023-09-13 23:22:45,047 - ERROR - Must pass 2-d input. shape=(1, 49, 12)
+2023-09-13 23:23:06,744 - ERROR - Must pass 2-d input. shape=(1, 49, 12)
+2023-09-13 23:23:29,613 - ERROR - Must pass 2-d input. shape=(1, 49, 12)
+2023-09-13 23:23:55,968 - ERROR - Must pass 2-d input. shape=(1, 49, 12)

@@ -30,8 +30,8 @@ def read_csv_header(file_path):
     generated_data = "\n".join(lines[:-1])
     print("-------------------------------------------")
     print(generated_data)
-    # synthetic_data = pd.read_csv(StringIO(generated_data))
-    # synthetic_data.to_csv("synthetic_data.csv")
+    synthetic_data = pd.read_csv(StringIO(generated_data))
+    synthetic_data.to_csv("synthetic_data.csv")
     
     return generated_data
 

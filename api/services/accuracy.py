@@ -99,9 +99,9 @@ def predict_loan_approval(input_path):
     input_data = pd.read_csv(input_path)
     with open('rf_classifier.pkl', 'rb') as model_file:
         rf_classifier = pickle.load(model_file)
-
+    
  
-
+    print(input_data)
     # Create a DataFrame from input_data
     new_df = pd.DataFrame([input_data], columns=['Gender', 'Married', 'Dependents', 'Education',
                                                  'Self_Employed', 'ApplicantIncome', 'CoapplicantIncome',
@@ -111,5 +111,7 @@ def predict_loan_approval(input_path):
  
 
     # Predict using the loaded model
+    
     predictions = rf_classifier.predict(new_df)
+    
     return predictions
