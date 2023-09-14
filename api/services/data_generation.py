@@ -20,6 +20,11 @@ import random
 
 def read_csv_header(file_path):
     df = pd.read_csv(file_path)
+    df_no =  df[df['Loan_Status']=='N']
+    df_yes =  df[df['Loan_Status']=='Y']
+    print(df_yes.head(1))
+    header = pd.concat([df_yes.head(1),df_no.head(5)])
+    print(header)
     header = df.head()
     columns = df.columns
     description = df.describe()
@@ -30,14 +35,14 @@ def read_csv_header(file_path):
     generated_data = "\n".join(lines[:-1])
     print("-------------------------------------------")
     print(generated_data)
-    synthetic_data = pd.read_csv(StringIO(generated_data))
-    synthetic_data.to_csv("synthetic_data.csv")
+    # synthetic_data = pd.read_csv(StringIO(generated_data))
+    # synthetic_data.to_csv("synthetic_data.csv")
     
     return generated_data
 
 def generate_model_data(csv_data):
-    prompt = f"""Generate 100 rows of data with columns: {', '.join(csv_data[0])}\n as a csv output refer  {', '.join(csv_data[2])}
-                 strictly as csv without any missing values
+    prompt = f""" Generate 100 rows of data with columns : {', '.join(csv_data[0])} strictly as csv without any missing values.Don't generate code., also refer :{', '.join(csv_data[2])} for dataset description, .
+                    
     
     """
     response = openai.Completion.create(

@@ -96,26 +96,27 @@ async def accuracy_generator(original_file: UploadFile, synthesized_file: Upload
             return 
 
 
-@router.post('/goml/LLM marketplace/finance_data_generator/validating_test', status_code=201)
-async def validating_test(file: UploadFile = File(...)):
-    try:
-        UPLOAD_DIR = "/api/uploads/"
+@router.post('/goml/LLM marketplace/finance_data_generator/validating_test/', status_code=201)
+def validating_test(file: UploadFile = File(...)):
+   
+    
+    UPLOAD_DIR = "/api/uploads/"
 
-        if not os.path.exists(UPLOAD_DIR):
-            os.makedirs(UPLOAD_DIR)
-        
-        # Generate a unique file name to avoid overwriting existing files
-        file_path = os.path.join(UPLOAD_DIR, file.filename)
-        
-        with open(file_path, "wb") as f:
-            f.write(file.file.read())
-        print(file_path)
-        predicted_data = predict_loan_approval(file_path)
-        
-        # Perform any additional processing or response logic here
-        
-        return {"predicted_data": predicted_data}
-    except Exception as e:
-        logger.error(str(e))
-        # raise HTTPException(status_code=500, detail="Internal server error")
-        return e
+    if not os.path.exists(UPLOAD_DIR):
+        os.makedirs(UPLOAD_DIR)
+    
+    # Generate a unique file name to avoid overwriting existing files
+    file_path = os.path.join(UPLOAD_DIR, file.filename)
+    
+    with open(file_path, "wb") as f:
+        f.write(file.file.read())
+    print(file_path)
+    predicted_data = predict_loan_approval(file_path)
+    
+    # Perform any additional processing or response logic here
+    
+    return {"predicted_data": predicted_data}
+    # except Exception as e:
+    #     logger.error(str(e))
+    #     # raise HTTPException(status_code=500, detail="Internal server error")
+    #     return e

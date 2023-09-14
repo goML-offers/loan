@@ -5,8 +5,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import pickle
+import numpy as np
 
- 
 
 def preprocess_data(df):
     label_encoder = LabelEncoder()
@@ -14,7 +14,8 @@ def preprocess_data(df):
     df['Married'] = label_encoder.fit_transform(df['Married'])
     df['Self_Employed'] = label_encoder.fit_transform(df['Self_Employed'])
     df['Property_Area'] = label_encoder.fit_transform(df['Property_Area'])
-    df['Loan_Status'] = label_encoder.fit_transform(df['Loan_Status'])
+    if 'Loan_Status'  in df.columns:
+        df['Loan_Status'] = label_encoder.fit_transform(df['Loan_Status'])
     df['Education'] = label_encoder.fit_transform(df['Education'])
     df['Dependents'] = pd.to_numeric(df['Dependents'], errors='coerce')
 
@@ -86,8 +87,8 @@ def train_loan_approval_model(path):
     
 
     # Save the model to a pickle file
-    with open('rf_classifier.pkl', 'wb') as model_file:
-        pickle.dump(rf_classifier, model_file)
+    # with open('process_pred.pkl', 'wb') as model_file:
+    #     pickle.dump(rf_classifier, model_file)
 
  
 
@@ -97,21 +98,15 @@ def train_loan_approval_model(path):
 
 def predict_loan_approval(input_path):
     input_data = pd.read_csv(input_path)
-    with open('rf_classifier.pkl', 'rb') as model_file:
+    with open('process_pred_new.pkl', 'rb') as model_file:
         rf_classifier = pickle.load(model_file)
     
- 
-    print(input_data)
-    # Create a DataFrame from input_data
-    new_df = pd.DataFrame([input_data], columns=['Gender', 'Married', 'Dependents', 'Education',
-                                                 'Self_Employed', 'ApplicantIncome', 'CoapplicantIncome',
-                                                 'LoanAmount', 'Loan_Amount_Term', 'Credit_History',
-                                                 'Property_Area'])
-
- 
-
-    # Predict using the loaded model
+    predictions  = rf_classifier.predict(input_data)
+    # # Predict using the loaded model
     
-    predictions = rf_classifier.predict(new_df)
+    print("Predictions",predictions,type(predictions))
+
+    input_data['predictions'] = predictions
     
-    return predictions
+    return str(input_data.to_csv())
+
